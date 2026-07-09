@@ -5,3 +5,7 @@ wegot = sum(nums)
 missing = correct - wegot
 
 print(int(missing))
+
+
+#~ Time Complexity : O(N)
+#~ Space Complexity: O(1)
