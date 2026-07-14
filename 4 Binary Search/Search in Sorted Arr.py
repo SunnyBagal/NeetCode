@@ -24,6 +24,8 @@ while l <= r :
 
     else:
       r = mid - 1
+
+  
   
 #~ Time Complexity: O(log N)
 #~ Space complexity: O(1)
