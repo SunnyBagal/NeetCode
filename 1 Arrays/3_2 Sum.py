@@ -52,9 +52,15 @@ hash_map = {}
 for i, n in enumerate(nums):
   diff = target - n
   if diff in hash_map:
-    print(diff, n)
     print(hash_map[diff], i)
   hash_map[n] = i 
 
+
+target = 8
+for index, val in enumerate(nums):
+  diff = target - val
+  if diff in hash_map:
+    print(hash_map[diff], index)
+  hash_map[val] = index
 
 
