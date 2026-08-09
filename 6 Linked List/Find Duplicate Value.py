@@ -11,4 +11,5 @@ while True:
   if slow == fast :
     break
   
-  slow2 = 0 
+  slow2 = 0
+  while s
