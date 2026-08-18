@@ -1,10 +1,11 @@
-nums = [1, 2, 3]
+nums = [7, 7]
 res = []
 
 def solve(index, subset):
   
   if index >= len(nums):
-    res.append(subset.copy())
+    if subset not in res:
+      res.append(subset.copy())
     return 
 
   subset.append(nums[index])
