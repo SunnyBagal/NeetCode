@@ -45,3 +45,33 @@ image = [[1, 1, 1],
 print("\nFlood fill:", flood_fill(image, 1, 1, 2))
 
 
+#* ---- Step 3: Number of Islands (LC 200) ----
+#* '1' = land, '0' = water. Count groups of connected land.
+#* Same as counting connected components - BFS from every unvisited land cell.
+
+def num_islands(grid):
+  rows, cols = len(grid), len(grid[0])
+  visited = [[0] * cols for _ in range(rows)]
+  islands = 0
+
+  for r in range(rows):
+    for c in range(cols):
+      if grid[r][c] == "1" and visited[r][c] == 0:
+        islands += 1
+        visited[r][c] = 1
+        queue = deque([(r, c)])
+        while queue:
+          cr, cc = queue.popleft()
+          for nr, nc in neighbours(cr, cc, rows, cols):
+            if grid[nr][nc] == "1" and visited[nr][nc] == 0:
+              visited[nr][nc] = 1
+              queue.append((nr, nc))
+  return islands
+
+grid = [["1", "1", "0", "0", "0"],
+        ["1", "1", "0", "0", "0"],
+        ["0", "0", "1", "0", "0"],
+        ["0", "0", "0", "1", "1"]]
+print("\nNumber of islands:", num_islands(grid))
+
+
