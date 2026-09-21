@@ -65,3 +65,18 @@ def list_components(n, adj):
 print("Components:", list_components(n, adj))
 
 
+#* ---- Step 5: Try it on another graph + complexity ----
+#* Fully connected chain 1-2-3-4-5 -> should be exactly 1 component.
+
+chain_n = 5
+chain_adj = [[] for _ in range(chain_n + 1)]
+for u, v in [[1, 2], [2, 3], [3, 4], [4, 5]]:
+  chain_adj[u].append(v)
+  chain_adj[v].append(u)
+
+print("\nChain components:", list_components(chain_n, chain_adj))
+assert count_components(chain_n, chain_adj) == 1
+
+#~ Time Complexity  : O(N + 2E) - every node and edge visited once
+#~ Space Complexity : O(N) visited + O(N) recursion stack
+#~ Related LeetCode : Number of Provinces (LC 547)
