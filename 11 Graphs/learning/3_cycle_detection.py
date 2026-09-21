@@ -25,3 +25,23 @@ print("Cyclic graph:", cyclic_adj)
 print("Tree graph  :", tree_adj)
 
 
+#* ---- Step 2: Cycle detection with BFS ----
+#* Queue stores (node, parent).
+
+def has_cycle_bfs(start, adj, visited):
+  queue = deque([(start, -1)])
+  visited[start] = 1
+  while queue:
+    node, parent = queue.popleft()
+    for neighbour in adj[node]:
+      if visited[neighbour] == 0:
+        visited[neighbour] = 1
+        queue.append((neighbour, node))
+      elif neighbour != parent:
+        return True
+  return False
+
+print("\nBFS -> cyclic:", has_cycle_bfs(1, cyclic_adj, [0] * 5))
+print("BFS -> tree  :", has_cycle_bfs(1, tree_adj, [0] * 5))
+
+
