@@ -1,28 +1,21 @@
 from collections import deque
 
-def dfs(n, adj, starting_node): 
-  ans = []
-  queue = deque()
-  visited = [0] * (n+1)
-  queue.append(starting_node)
-  visited[starting_node] = 1
-
-  while len(queue) != 0:
-    e = queue.popleft()
-    ans.append(e)
-
-    for node in adj[e]:
-      if visited[node] == 0:
-        queue.append(node)
-        visited[node] = 1
-
-  return ans
+def dfs(node, result, visited, adj):
+  visited[node] = 1
+  result.append(node)
+  for n in adj[node]:
+    if visited[n] == 0:
+      dfs(n, result, visited, adj)
 
 
-adjacency_list = [ [],[2,8],[1,3,4],[2],[2,5],[4,6],[5,7],[6,8],[1,7,9],[8] ]
-n = 9 
 
-print(bfs(n, adjacency_list, 1))
+adjacency_list = [ [],[2,4],[1,3,6],[2],[1,5,7],[4,8],[2],[4,8],[5,7]]
+n = 8
+visited = [0] * (n+1)
+result = []
+dfs(1, result, visited, adjacency_list)
+print(result)
 
-# Space Complexity : O(3N)
-# Time Complexity : O(N) + O(2 * Edges)
+
+#~ Space Complexity : O(2N)
+#~ Time Complexity : O(N) + O(2 * Edges)
