@@ -19,3 +19,19 @@ for u, v in edges:
 print("Adjacency list:", adj)
 
 
+#* ---- Step 2: DFS helper that visits one whole component ----
+#* Start at any node, DFS marks everything reachable from it.
+
+def dfs(node, visited, adj, component):
+  visited[node] = 1
+  component.append(node)
+  for neighbour in adj[node]:
+    if visited[neighbour] == 0:
+      dfs(neighbour, visited, adj, component)
+
+visited = [0] * (n + 1)
+reached = []
+dfs(1, visited, adj, reached)
+print("\nReachable from 1:", reached)
+
+
