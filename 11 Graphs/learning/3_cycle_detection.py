@@ -45,3 +45,20 @@ print("\nBFS -> cyclic:", has_cycle_bfs(1, cyclic_adj, [0] * 5))
 print("BFS -> tree  :", has_cycle_bfs(1, tree_adj, [0] * 5))
 
 
+#* ---- Step 3: Cycle detection with DFS ----
+#* Same idea, but pass the parent down the recursion.
+
+def has_cycle_dfs(node, parent, adj, visited):
+  visited[node] = 1
+  for neighbour in adj[node]:
+    if visited[neighbour] == 0:
+      if has_cycle_dfs(neighbour, node, adj, visited):
+        return True
+    elif neighbour != parent:
+      return True
+  return False
+
+print("\nDFS -> cyclic:", has_cycle_dfs(1, -1, cyclic_adj, [0] * 5))
+print("DFS -> tree  :", has_cycle_dfs(1, -1, tree_adj, [0] * 5))
+
+
