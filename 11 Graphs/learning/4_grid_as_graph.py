@@ -104,3 +104,13 @@ area_grid = [[0, 1, 1, 0],
 print("\nMax island area:", max_area_of_island(area_grid))
 
 
+#* ---- Step 5: Quick checks + complexity ----
+
+assert num_islands([["1", "0"], ["0", "1"]]) == 2
+assert num_islands([["0", "0"], ["0", "0"]]) == 0
+assert max_area_of_island(area_grid) == 4
+print("\nAll grid checks passed")
+
+#~ Time Complexity  : O(R * C) - every cell visited once, 4 neighbours each
+#~ Space Complexity : O(R * C) visited + queue / recursion stack
+#~ Next up: Rotting Oranges (LC 994) - multi-source BFS on a grid
