@@ -62,3 +62,13 @@ for node in range(1, n + 1):
   print(f"  {node} -> {weighted_adj[node]}")
 
 
+#* ---- Step 5: Handshake rule + complexity ----
+#* Every undirected edge adds 1 to the degree of BOTH ends,
+#* so: sum of all degrees = 2 * number of edges. Always.
+
+total_degree = sum(len(adj[node]) for node in range(1, n + 1))
+print(f"\nSum of degrees = {total_degree}, 2 * edges = {2 * len(edges)}")
+assert total_degree == 2 * len(edges)
+
+#~ Adjacency matrix : Space O(N^2)  - fast "is u connected to v?" check
+#~ Adjacency list   : Space O(N + 2E) - best for traversals, used almost always
