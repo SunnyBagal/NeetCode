@@ -35,3 +35,18 @@ dfs(1, visited, adj, reached)
 print("\nReachable from 1:", reached)
 
 
+#* ---- Step 3: Count components ----
+#* Loop over every node. If it's not visited yet, it starts a NEW component.
+
+def count_components(n, adj):
+  visited = [0] * (n + 1)
+  count = 0
+  for node in range(1, n + 1):
+    if visited[node] == 0:
+      count += 1
+      dfs(node, visited, adj, [])
+  return count
+
+print("\nNumber of components:", count_components(n, adj))
+
+
