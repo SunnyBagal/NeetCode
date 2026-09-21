@@ -75,3 +75,32 @@ grid = [["1", "1", "0", "0", "0"],
 print("\nNumber of islands:", num_islands(grid))
 
 
+#* ---- Step 4: Max Area of Island (LC 695) ----
+#* Same traversal, but count the cells in each island and keep the biggest.
+
+def max_area_of_island(grid):
+  rows, cols = len(grid), len(grid[0])
+  visited = [[0] * cols for _ in range(rows)]
+
+  def dfs(r, c):
+    visited[r][c] = 1
+    area = 1
+    for nr, nc in neighbours(r, c, rows, cols):
+      if grid[nr][nc] == 1 and visited[nr][nc] == 0:
+        area += dfs(nr, nc)
+    return area
+
+  best = 0
+  for r in range(rows):
+    for c in range(cols):
+      if grid[r][c] == 1 and visited[r][c] == 0:
+        best = max(best, dfs(r, c))
+  return best
+
+area_grid = [[0, 1, 1, 0],
+             [0, 1, 0, 0],
+             [1, 0, 1, 1],
+             [0, 0, 1, 1]]
+print("\nMax island area:", max_area_of_island(area_grid))
+
+
