@@ -17,3 +17,17 @@ print("Nodes:", list(range(1, n + 1)))
 print("Edges:", edges)
 
 
+#* ---- Step 2: Undirected graph + degree ----
+#* Store it as an adjacency list: adj[u] = all neighbours of u.
+#* Undirected -> add the edge in BOTH directions.
+
+adj = [[] for _ in range(n + 1)]
+for u, v in edges:
+  adj[u].append(v)
+  adj[v].append(u)
+
+print("\nUndirected adjacency list:")
+for node in range(1, n + 1):
+  print(f"  {node} -> {adj[node]}  (degree {len(adj[node])})")
+
+
