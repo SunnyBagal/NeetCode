@@ -1,0 +1,19 @@
+#* ---- Step 1: What is a graph? ----
+#* A graph is a set of NODES (vertices) connected by EDGES.
+#*   - Undirected edge : u -- v   (you can go both ways)
+#*   - Directed edge   : u --> v  (one way only)
+#*   - Weighted edge   : u --5-- v (edge carries a cost / distance)
+#* Real life: cities + roads, people + friendships, web pages + links.
+#*
+#* Key words:
+#*   - Degree   : number of edges touching a node (undirected)
+#*   - Path     : sequence of nodes where each pair is connected, no node repeated
+#*   - Cycle    : path that starts and ends at the same node
+#*   - Connected: every node can reach every other node
+
+n = 5
+edges = [[1, 2], [2, 4], [3, 4], [1, 3], [3, 5], [5, 4]]
+print("Nodes:", list(range(1, n + 1)))
+print("Edges:", edges)
+
+
