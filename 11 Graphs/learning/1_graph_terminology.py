@@ -31,3 +31,19 @@ for node in range(1, n + 1):
   print(f"  {node} -> {adj[node]}  (degree {len(adj[node])})")
 
 
+#* ---- Step 3: Directed graph + in/out degree ----
+#* Directed -> add the edge only u --> v.
+#*   - Out-degree : edges leaving the node
+#*   - In-degree  : edges coming into the node
+
+directed_adj = [[] for _ in range(n + 1)]
+in_degree = [0] * (n + 1)
+for u, v in edges:
+  directed_adj[u].append(v)
+  in_degree[v] += 1
+
+print("\nDirected adjacency list:")
+for node in range(1, n + 1):
+  print(f"  {node} -> {directed_adj[node]}  (out {len(directed_adj[node])}, in {in_degree[node]})")
+
+
