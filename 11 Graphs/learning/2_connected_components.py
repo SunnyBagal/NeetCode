@@ -50,3 +50,18 @@ def count_components(n, adj):
 print("\nNumber of components:", count_components(n, adj))
 
 
+#* ---- Step 4: List every component ----
+
+def list_components(n, adj):
+  visited = [0] * (n + 1)
+  components = []
+  for node in range(1, n + 1):
+    if visited[node] == 0:
+      component = []
+      dfs(node, visited, adj, component)
+      components.append(component)
+  return components
+
+print("Components:", list_components(n, adj))
+
+
