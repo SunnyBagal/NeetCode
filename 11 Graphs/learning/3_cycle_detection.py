@@ -79,3 +79,15 @@ print("\nDisconnected graph has cycle:", graph_has_cycle(5, split_adj))
 print("Starting only from 1 finds it:", has_cycle_dfs(1, -1, split_adj, [0] * 6))
 
 
+#* ---- Step 5: Quick checks + complexity ----
+
+assert graph_has_cycle(4, cyclic_adj) is True
+assert graph_has_cycle(4, tree_adj) is False
+assert graph_has_cycle(5, split_adj) is True
+print("\nAll cycle checks passed")
+
+#~ Time Complexity  : O(N + 2E)
+#~ Space Complexity : O(N) visited + O(N) queue / recursion stack
+#~ Note: for DIRECTED graphs the parent trick doesn't work -
+#~       there you track nodes currently on the recursion path instead.
+#~ Related LeetCode : Graph Valid Tree (LC 261), Redundant Connection (LC 684)
