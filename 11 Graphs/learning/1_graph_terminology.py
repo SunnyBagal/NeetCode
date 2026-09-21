@@ -47,3 +47,18 @@ for node in range(1, n + 1):
   print(f"  {node} -> {directed_adj[node]}  (out {len(directed_adj[node])}, in {in_degree[node]})")
 
 
+#* ---- Step 4: Weighted graph ----
+#* Store (neighbour, weight) pairs instead of just the neighbour.
+
+weighted_edges = [[1, 2, 4], [2, 4, 1], [3, 4, 7], [1, 3, 2], [3, 5, 3], [5, 4, 6]]
+
+weighted_adj = [[] for _ in range(n + 1)]
+for u, v, w in weighted_edges:
+  weighted_adj[u].append((v, w))
+  weighted_adj[v].append((u, w))
+
+print("\nWeighted adjacency list (neighbour, weight):")
+for node in range(1, n + 1):
+  print(f"  {node} -> {weighted_adj[node]}")
+
+
