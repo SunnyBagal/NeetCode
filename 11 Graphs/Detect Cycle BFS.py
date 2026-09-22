@@ -4,18 +4,13 @@ V = 4
 E = 4
 edges = [[0,1],[0,2],[1,2],[2,3]]
 
-from collections import deque
-
 def detect_cycle(V, edges):
   adj_list = [[] for _ in range(V)]
   for u, w in edges:
       adj_list[u].append(w)
       adj_list[w].append(u)
 
-  print(adj_list)
-
   visited = [0] * V
-  print(visited)
   for i in range(V):
       if visited[i]:
           continue
