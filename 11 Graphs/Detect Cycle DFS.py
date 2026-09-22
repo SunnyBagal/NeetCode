@@ -6,9 +6,9 @@ def dfs(node, parent, visited, adj_list):
       ans = dfs(adjNode, node, visited, adj_list)
       if ans == True:
         return True
-      elif visited[adjNode] == 1 and adjNode != parent:
-        return True
-      
+    elif adjNode != parent:
+      return True
+
   return False
 
 def isCycle(v, edges):
