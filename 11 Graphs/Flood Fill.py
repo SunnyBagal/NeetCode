@@ -87,8 +87,8 @@ def flood_fill(image, sr, sc, color):
 
   return visited
 
-  #~ Space Complexity : O(R x C) + O(R x C){stack space
-  #~ Time Complexity : O(R x C x 4) 
+  #~ Space Complexity : O(R x C){copy} + O(R x C){queue}
+  #~ Time Complexity : O(R x C x 4)
 
 def dfs(i, j, new_color, initial_color, visited, rows, cols):
   if i < 0 or i >= rows or j < 0 or j >= cols:
@@ -107,8 +107,8 @@ def dfs(i, j, new_color, initial_color, visited, rows, cols):
   dfs(i, j + 1, new_color, initial_color, visited, rows, cols)
   dfs(i, j - 1, new_color, initial_color, visited, rows, cols)
 
-#~ Space Complexity : O(R x C)
-#~ Time Complexity : O(R x C x 4) + O(R x C){stack space
+#~ Space Complexity : O(R x C){stack space}
+#~ Time Complexity : O(R x C x 4)
 
 
 print(flood_fill(image, sr, sc, color))
