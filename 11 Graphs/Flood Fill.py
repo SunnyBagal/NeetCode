@@ -110,3 +110,10 @@ def dfs(i, j, new_color, initial_color, visited, rows, cols):
 #~ Space Complexity : O(R x C)
 #~ Time Complexity : O(R x C x 4) + O(R x C){stack space
 
+
+print(flood_fill(image, sr, sc, color))
+
+
+
+
+
