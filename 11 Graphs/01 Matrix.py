@@ -92,6 +92,9 @@ def updateMatrix(mat:List[List[int]]) -> List[List[int]]:
 
   return distance
 
+  #~ Space Complexity : O(R x C){visited} + O(R x C){distance} + O(R x C){queue}
+  #~ Time Complexity : O(R x C){find 0s} + O(R x C x 4){bfs} ~~ O(R x C)
+
 
 mat = [[0,0,0],[0,1,0],[0,0,1]]
 print(updateMatrix(mat))
