@@ -18,8 +18,6 @@ def isCycle(v, edges):
       adj_list[w].append(u)
 
   visited = [0] * v
-  dfs(0, -1, visited, adj_list)
-
   for i in range(0, v):
     if visited[i] == 1:
       continue
