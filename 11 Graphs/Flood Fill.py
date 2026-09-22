@@ -90,3 +90,23 @@ def flood_fill(image, sr, sc, color):
   #~ Space Complexity : O(R x C) + O(R x C){stack space
   #~ Time Complexity : O(R x C x 4) 
 
+def dfs(i, j, new_color, initial_color, visited, rows, cols):
+  if i < 0 or i >= rows or j < 0 or j >= cols:
+    return
+
+  if visited[i][j] != initial_color:
+    return
+
+  if visited[i][j] == new_color:
+    return
+
+  visited[i][j] = new_color
+
+  dfs(i + 1, j, new_color, initial_color, visited, rows, cols)
+  dfs(i - 1, j, new_color, initial_color, visited, rows, cols)
+  dfs(i, j + 1, new_color, initial_color, visited, rows, cols)
+  dfs(i, j - 1, new_color, initial_color, visited, rows, cols)
+
+#~ Space Complexity : O(R x C)
+#~ Time Complexity : O(R x C x 4) + O(R x C){stack space
+
