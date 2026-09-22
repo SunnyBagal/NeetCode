@@ -43,3 +43,10 @@
 #*
 #*   Explanation: the only 0 is in the centre. Edge cells touch it (1 step),
 #*   corner cells need 2 steps because diagonal moves are not allowed.
+
+#* ---- Example 4 ----
+#*   Input:  mat = [[0,1,1,1]]
+#*
+#*   Output:       [[0,1,2,3]]
+#*
+#*   Explanation: a single row - each cell is one step further from the 0.
