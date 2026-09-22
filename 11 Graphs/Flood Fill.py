@@ -53,3 +53,12 @@
 #*   0 <= image[i][j], color < 2^16
 #*   0 <= sr < m
 #*   0 <= sc < n
+
+from copy import deepcopy
+from collections import deque
+
+image = [[1,1,1],[1,1,0],[1,0,1]]
+sr = 1 
+sc = 1 
+color = 2
+
