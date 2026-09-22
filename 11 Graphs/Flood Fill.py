@@ -62,3 +62,31 @@ sr = 1
 sc = 1 
 color = 2
 
+def flood_fill(image, sr, sc, color):
+  if image[sr][sc] == color:
+    return image
+
+  visited = deepcopy(image)
+  rows = len(visited)
+  cols = len(visited[0])
+  initial_color = visited[sr][sc]
+  queue = deque()
+  queue.append((sr, sc))
+  # dfs(sr, sc, color, initial_color, visited, rows, cols)
+  while len(queue) != 0:
+    i, j = queue.popleft()
+    visited[i][j] = color
+    for x, y in [(-1,0), (0, -1), (1,0), (0,1)]:
+      new_i = i + x
+      new_j = j + y
+      if new_i < 0 or new_i >= rows or new_j < 0 or new_j >= cols:
+        continue
+      if visited[new_i][new_j] != initial_color:
+        continue
+      queue.append((new_i, new_j))
+
+  return visited
+
+  #~ Space Complexity : O(R x C) + O(R x C){stack space
+  #~ Time Complexity : O(R x C x 4) 
+
