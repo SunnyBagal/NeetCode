@@ -28,7 +28,7 @@ def detect_cycle(V, edges):
               
   return False
 
-detect_cycle(V, edges)
+print(detect_cycle(V, edges))
 
-#~ Space Complexity: O(N + 2E) + O(N){for loop if not connected}
-#~ Time Complexity: O(N) + O(N)
+#~ Time Complexity: O(N + 2E) + O(N){for loop if not connected}
+#~ Space Complexity: O(N){visited} + O(N){queue}
