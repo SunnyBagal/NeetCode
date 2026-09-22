@@ -18,3 +18,16 @@
 #*
 #*   Explanation: every 0 is distance 0 from itself, and the single 1 in
 #*   the middle has a 0 right next to it, so its distance is 1.
+
+#* ---- Example 2 ----
+#*   Input:  mat = [[0,0,0],
+#*                  [0,1,0],
+#*                  [1,1,1]]
+#*
+#*   Output:       [[0,0,0],
+#*                  [0,1,0],
+#*                  [1,2,1]]
+#*
+#*   Explanation: the cell at (2,1) has no 0 next to it - all its
+#*   neighbours are 1s. The nearest 0 is two steps away, e.g. left to
+#*   (2,0) then up to (1,0), so its distance is 2.
