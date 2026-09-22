@@ -92,3 +92,7 @@ def updateMatrix(mat:List[List[int]]) -> List[List[int]]:
       visited[new_i][new_j] = 1
 
   return distance
+
+
+mat = [[0,0,0],[0,1,0],[0,0,1]]
+print(updateMatrix(mat))
