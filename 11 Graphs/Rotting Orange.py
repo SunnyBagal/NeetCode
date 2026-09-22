@@ -50,3 +50,4 @@ def rotten_tomatos(grid: List[List[int]]) -> int:
 grid=[[1,1,0],[0,1,1],[0,1,2]]
 print(rotten_tomatos(grid))
 
+#~ Space Complexity: O(R x C) + O(R x C) ~~ O(R x C)
