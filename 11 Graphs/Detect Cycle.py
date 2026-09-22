@@ -33,3 +33,4 @@ def detect_cycle(V, edges):
 
   return False
 
+print(detect_cycle(V, edges))
